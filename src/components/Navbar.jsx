@@ -12,7 +12,7 @@ function Navbar() {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/contact">Contact</NavLink>
           <div className="header__card">
-            <span className="header__card__indicator">6</span>
+            <span className="header__card__indicator">5</span>
             <FaShoppingCart />
           </div>
         </nav>

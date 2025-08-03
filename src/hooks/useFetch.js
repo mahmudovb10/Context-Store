@@ -9,19 +9,18 @@ export function useFetch(url) {
     const fetchData = async () => {
       setIsPending(true);
       try {
-        const req = await fetch(url);
-        if (!req.ok) {
-          throw new Error(req.statusText);
-        }
-        const data = await req.json();
-        setData(data);
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Failed to fetch");
+
+        const result = await res.json();
+        setData(result.products);
         setIsPending(false);
       } catch (err) {
         setError(err.message);
-        console.log(err.message);
         setIsPending(false);
       }
     };
+
     fetchData();
   }, [url]);
 
